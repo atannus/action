@@ -108,7 +108,7 @@ const Step3InviteTeam = (props) => {
             Sounds like a great team!
           </Type>
           <WelcomeHeading copy={<span>Let’s invite some folks to the <b>{teamName}</b> team.</span>}/>
-          <HotKeys handlers={{ keyEnter: onAddInviteesButtonClick}}>
+          <HotKeys handlers={{keyEnter: onAddInviteesButtonClick}}>
             <div style={{margin: '0 auto', width: '30rem'}}>
               <Field
                 autoFocus={!invitees || invitees.length === 0}

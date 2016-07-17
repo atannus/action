@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import NotificationSystem from 'react-notification-system';
@@ -15,11 +15,11 @@ const mapDispatchToProps = dispatch => ({
 });
 
 @connect(mapStateToProps, mapDispatchToProps)
-export default class Notifications extends React.Component {
+export default class Notifications extends Component {
   static propTypes = {
     notifications: PropTypes.array,
     notificationActions: PropTypes.object.isRequired,
-  }
+  };
 
   constructor(props) {
     super(props);

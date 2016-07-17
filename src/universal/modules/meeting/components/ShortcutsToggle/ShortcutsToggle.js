@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import FontAwesome from 'react-fontawesome';
 import theme from 'universal/styles/theme';
 
@@ -13,7 +13,7 @@ export default class ShortcutsToggle extends Component {
   }
 
   render() {
-    const { onClick } = this.props;
+    const {onClick} = this.props;
 
     return (
       <a className={styles.shortcutsToggle} href="#" onClick={onClick} title="Show shortcuts">

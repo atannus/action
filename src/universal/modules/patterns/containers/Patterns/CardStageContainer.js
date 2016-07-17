@@ -47,7 +47,7 @@ const cardStage = <CardStage cards={demoCards} />;
 const cardStageString = '<CardStage cards={demoCards} />';
 
 const cardStagePropsList = [
-  { name: 'cards', type: 'array',
+  {name: 'cards', type: 'array',
     // eslint-disable-next-line max-len
     description: <span>This array is a set of users (name, image, badge, label, isCurrent) presented on Card components</span>
   }

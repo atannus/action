@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-look';
+import {StyleSheet} from 'react-look';
 
 /* eslint-disable max-len */
 

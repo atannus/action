@@ -68,8 +68,8 @@ export default class Settings extends Component {
   }
 
   initializeForm() {
-    const {dispatch, user: { profile: {preferredName} } } = this.props;
-    return dispatch(initialize('userSettings', { preferredName }));
+    const {dispatch, user: {profile: {preferredName}}} = this.props;
+    return dispatch(initialize('userSettings', {preferredName}));
   }
 
   renderActivity(activity) {

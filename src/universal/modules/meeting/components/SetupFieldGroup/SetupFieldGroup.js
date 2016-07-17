@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import theme from 'universal/styles/theme';
 import IconButton from '../../components/IconButton/IconButton';
 import SetupField from '../../components/SetupField/SetupField';
@@ -21,7 +21,7 @@ export default class SetupFieldGroup extends Component {
   }
 
   render() {
-    const { contentLabel, fields, fieldLabel } = this.props;
+    const {contentLabel, fields, fieldLabel} = this.props;
     const columnLeftStyles = combineStyles(styles.fieldGroupColumn, styles.fieldGroupColumnLeft);
     const columnRightStyles = combineStyles(styles.fieldGroupColumn, styles.fieldGroupColumnRight);
     const fieldLabelStyles = combineStyles(styles.fieldGroupLabel, styles.fieldGroupLabelForFields);
@@ -53,7 +53,7 @@ export default class SetupFieldGroup extends Component {
             >
               <div className={columnLeftStyles}>
                 <div className={styles.fieldRemovalBlock}>
-                  {(field.row.rowWithHover === index) &&
+                  {field.row.rowWithHover === index &&
                     <IconButton
                       iconName="times-circle"
                       iconSize="2x"

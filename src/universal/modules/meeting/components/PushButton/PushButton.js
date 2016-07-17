@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import theme from 'universal/styles/theme';
 
 const combineStyles = StyleSheet.combineStyles;
@@ -21,7 +21,7 @@ export default class PushButton extends Component {
   }
 
   render() {
-    const { disabled, keystroke, label, onClick, size } = this.props;
+    const {disabled, keystroke, label, onClick, size} = this.props;
     const buttonKeystroke = keystroke || 'D';
     const buttonLabel = label || 'Delete everything!';
     const largeStyles = combineStyles(styles.button, styles.buttonLarge);

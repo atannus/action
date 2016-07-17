@@ -14,23 +14,18 @@ const getSettingsImports = importMap => ({
   userDashboardSettings: importMap.get('userDashboardSettings').default
 });
 
-export default (store) => ([
-  {
-    path: '/me',
-    getComponent: async(location, cb) => {
-      const component = await System.import('universal/modules/userDashboard/containers/Me/Me');
-      cb(null, component);
-    }
-  },
-  {
+export default function me(store) {
+  return {
     path: '/me/settings',
-    getComponent: async(location, cb) => {
+    getComponent: async (location, cb) => {
+      console.log('gettin settin');
       const promiseMap = setSettingsImports();
       const importMap = await resolvePromiseMap(promiseMap);
       const {component, ...asyncReducers} = getSettingsImports(importMap);
       const newReducer = makeReducer(asyncReducers);
       store.replaceReducer(newReducer);
+      console.log('callbackin comp', component);
       cb(null, component);
-    },
-  }
-]);
+    }
+  };
+}

@@ -16,7 +16,7 @@ const getImports = importMap => ({
 
 export default (store) => ({
   path: '/invitation/:id',
-  getComponent: async(location, cb) => {
+  getComponent: async (location, cb) => {
     const promiseMap = setImports();
     const importMap = await resolvePromiseMap(promiseMap);
     const {component, ...asyncReducers} = getImports(importMap);

@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import * as appTheme from 'universal/styles/theme';
 import tinycolor from 'tinycolor2';
 
 const combineStyles = StyleSheet.combineStyles;
-const { cool, warm, dark, mid, light } = appTheme.palette;
+const {cool, warm, dark, mid, light} = appTheme.palette;
 
 const makeSolidTheme = (themeColor, textColor = '#fff', style = 'solid', opacity = '.65') => {
   let buttonColor = themeColor;

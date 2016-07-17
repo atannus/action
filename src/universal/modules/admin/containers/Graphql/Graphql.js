@@ -10,7 +10,7 @@ const graphQLHost = getGraphQLHost();
 const graphQLProtocol = getGraphQLProtocol();
 
 const makeGraphQLFetcher = authToken => {
-  return async(graphQLParams) => {
+  return async (graphQLParams) => {
     if (!__CLIENT__) {
       return undefined;
     }

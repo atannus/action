@@ -38,10 +38,10 @@ export const hashInviteTokenKey = async (uriTokenString) => {
   return await hash(key, INVITE_TOKEN_KEY_HASH_ROUNDS);
 };
 
-export const validateInviteTokenKey = async(key, hashStringToCompare) =>
+export const validateInviteTokenKey = async (key, hashStringToCompare) =>
   await compare(key, hashStringToCompare);
 
-export const getInviterInfoAndMeetingName = async(meetingId, userId) => {
+export const getInviterInfoAndMeetingName = async (meetingId, userId) => {
   /**
    * (1) Fetch user email and picture link from CachedUser.
    * (2) Rename fields to match MeetingInvite email props
@@ -61,7 +61,7 @@ export const getInviterInfoAndMeetingName = async(meetingId, userId) => {
 };
 
 // can't use Promise.all because we want to try n+1, even if n was an error. we're not quitters!
-export const resolveSentEmails = async(sendEmailPromises, inviteesWithTokens) => {
+export const resolveSentEmails = async (sendEmailPromises, inviteesWithTokens) => {
   const inviteeErrors = [];
   const inviteesToStore = [];
   for (let i = 0; i < sendEmailPromises.length; i++) {
@@ -74,7 +74,7 @@ export const resolveSentEmails = async(sendEmailPromises, inviteesWithTokens) =>
   return {inviteeErrors, inviteesToStore};
 };
 
-export const makeInvitationsForDB = async(invitees, meetingId) => {
+export const makeInvitationsForDB = async (invitees, meetingId) => {
   const now = new Date();
   const tokenExpiration = now.valueOf() + ms('30d');
   const hashPromises = invitees.map(invitee => hashInviteTokenKey(invitee.inviteToken));

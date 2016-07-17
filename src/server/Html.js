@@ -1,6 +1,6 @@
 /* eslint react/no-danger:0 */
 import React, {PropTypes} from 'react';
-import { LookRoot } from 'react-look';
+import {LookRoot} from 'react-look';
 import {Provider} from 'react-redux';
 import {RouterContext} from 'react-router';
 import {renderToString} from 'react-dom/server';

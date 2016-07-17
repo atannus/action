@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import theme from 'universal/styles/theme';
 import Avatar from '../../components/Avatar/Avatar';
 
@@ -14,7 +14,7 @@ export default class AvatarGroup extends Component {
   };
 
   render() {
-    const { label, avatars } = this.props;
+    const {label, avatars} = this.props;
 
     return (
       <div className={styles.avatarGroup}>

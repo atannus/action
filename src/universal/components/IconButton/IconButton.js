@@ -4,13 +4,13 @@ import FontAwesome from 'react-fontawesome';
 import theme from 'universal/styles/theme';
 
 const combineStyles = StyleSheet.combineStyles;
-const { cool } = theme.palette;
+const {cool} = theme.palette;
 const baseButtonColor = theme.palette.cool40l;
 
 let styles = {};
 
 const IconButton = props => {
-  const { disabled, iconName, iconSize, onClick, title } = props;
+  const {disabled, iconName, iconSize, onClick, title} = props;
   const disabledStyles = combineStyles(styles.base, styles.disabled);
   const buttonStyles = disabled ? disabledStyles : styles.base;
 

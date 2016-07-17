@@ -10,7 +10,7 @@ const projectCardString = '<ProjectCard showByTeam />';
 
 // TODO: Add all props to demo
 const projectCardPropsList = [
-  { name: 'TBD', type: 'TBD',
+  {name: 'TBD', type: 'TBD',
     description: <span>TBD: Component is actively being developed…</span>
   }
 ];

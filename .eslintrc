@@ -1,44 +1,50 @@
 { "extends": [
-    "plugin:react/recommended",
+    "eslint:recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
+    "plugin:react/recommended",
     "eslint-config-airbnb/base",
     "eslint-config-airbnb/rules/react"
   ],
   "env": {
     "browser": true,
     "node": true,
-    "mocha": true
+    "es6": true
   },
+  "plugins": [
+    "async-await",
+    "import",
+    "react",
+    "babel"
+  ],
   "rules": {
-    "react/no-multi-comp": 0,
+    "array-callback-return": 1,
+    "async-await/space-after-async": 2,
+    "async-await/space-after-await": 2,
+    "arrow-body-style": 0,
+    "babel/object-curly-spacing": [2, "never"],
+    "comma-dangle": 0,
     "import/default": 0,
-    "import/no-duplicates": 0,
     "import/named": 0,
     "import/namespace": 0,
     "import/no-unresolved": 0,
-    "import/no-named-as-default": 2,
-    "arrow-body-style": 0,
-    "comma-dangle": 0,
-    "id-length": 0,
-    "indent": [2, 2, {"SwitchCase": 1}],
-    "no-alert": 0,
-    "no-console": 0,
-    "no-param-reassign": 0,
+    "import/no-named-as-default": 2
     "max-len": [1, 120],
+    "no-console": 0,
+    "no-extra-parens": 2,
+    "no-param-reassign": 0,
     "object-curly-spacing": 0,
-    "react/jsx-space-before-closing": 0
+    "react/no-danger": 0,
+    "react/jsx-space-before-closing": 0,
+    "react/no-multi-comp": 0,
   },
-  "plugins": [
-    "react", "import"
-  ],
   "parser": "babel-eslint",
   "settings": {
     "import/parser": "babel-eslint",
     "import/resolve": {
-      moduleDirectory: ["node_modules", "src"]
+      "moduleDirectory": ["node_modules", "src"]
     },
-    "import/ignore": [".scss$", ".css$", ".svg$"]
+    "import/ignore": [".css$", ".svg$", ".jpg$", ".png$"]
   },
   "globals": {
     "__PRODUCTION__": true,

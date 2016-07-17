@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import HappyPack from 'happypack';
-import { getDotenv } from '../src/universal/utils/dotenv';
+import {getDotenv} from '../src/universal/utils/dotenv';
 
 /*
  * Configuration invoked from ./src/server/worker.js, et al.

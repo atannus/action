@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import FontAwesome from 'react-fontawesome';
 import tinycolor from 'tinycolor2';
 import theme from 'universal/styles/theme';
@@ -21,12 +21,12 @@ export default class AdvanceLink extends Component {
   }
 
   clickHandler = () => {
-    const { disabled, onClick } = this.props;
+    const {disabled, onClick} = this.props;
     onClick(disabled);
   }
 
   render() {
-    const { disabled, href, icon, label } = this.props;
+    const {disabled, href, icon, label} = this.props;
 
     const disabledStyles = combineStyles(styles.link, styles.disabled);
     const linkStyles = disabled ? disabledStyles : styles.link;

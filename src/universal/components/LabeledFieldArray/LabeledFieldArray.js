@@ -51,7 +51,7 @@ const FieldsBlock = props => {
         >
           <div className={columnLeftStyles}>
             <div className={styles.fieldRemovalBlock}>
-              {(hoverRow === index) && <IconButton
+              {hoverRow === index && <IconButton
                 iconName="times-circle"
                 iconSize="2x"
                 onClick={() => fields.remove(index)}
@@ -107,8 +107,8 @@ export default class LabeledFieldArray extends Component {
     };
   }
 
-  onHoverRow(index) { this.setState({ hoverRow: index }); }
-  onLeaveRow() { this.setState({ hoverRow: null }); }
+  onHoverRow(index) { this.setState({hoverRow: index}); }
+  onLeaveRow() { this.setState({hoverRow: null}); }
 
   render() {
     const {

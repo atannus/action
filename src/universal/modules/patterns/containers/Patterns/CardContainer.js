@@ -18,13 +18,13 @@ const cardActive = <Card active avatar={demoUser} hasControls label={demoUser.st
 const cardActiveString = '<Card active avatar={demoUser} hasControls label={demoUser.state} />';
 
 const cardPropsList = [
-  { name: 'active', type: 'bool',
+  {name: 'active', type: 'bool',
     description: <span>Card has front-and-center styling (otherwise smaller, blurred)</span>
   },
-  { name: 'avatar', type: 'object',
+  {name: 'avatar', type: 'object',
     description: <span>Object to include avatar.name, avatar.image, avatar.badge</span>
   },
-  { name: 'label', type: 'string',
+  {name: 'label', type: 'string',
     description: <span>Text that appears under the avatar image and name</span>
   }
 ];
