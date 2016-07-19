@@ -2,7 +2,7 @@ import test from 'ava';
 import createEmbeddedImages from '../createEmbeddedImages';
 
 test('returns identity if no html key', t => {
-  const inputObj = { text: 'hello', to: 'mom@mom.com' };
+  const inputObj = {text: 'hello', to: 'mom@mom.com'};
   const result = createEmbeddedImages(inputObj);
 
   t.deepEqual(inputObj, result);

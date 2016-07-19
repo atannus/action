@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 // import FontAwesome from 'react-fontawesome';
 // import tinycolor from 'tinycolor2';
 import theme from 'universal/styles/theme';
@@ -21,7 +21,7 @@ export default class Card extends Component {
   };
 
   render() {
-    const { active, avatar, hasControls, label } = this.props;
+    const {active, avatar, hasControls, label} = this.props;
 
     const cardActiveStyles = combineStyles(styles.card, styles.cardIsActive);
     const cardBlurredStyles = combineStyles(styles.card, styles.cardIsBlurred);

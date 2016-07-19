@@ -9,27 +9,27 @@ import Button from 'universal/components/Button/Button';
 const button = <Button size="large" style="solid" theme="warm" />;
 const buttonString = '<Button size="large" style="solid" theme="warm" />';
 const buttonPropsList = [
-  { name: 'disabled', type: 'bool',
+  {name: 'disabled', type: 'bool',
     description: <span>Sets the boolean HTML attribute and causes disabled styling</span>
   },
-  { name: 'label', type: 'string',
+  {name: 'label', type: 'string',
     description: <span>The visible button text. <b>Defaults</b> to “<i>Label Me</i>”</span>
   },
-  { name: 'onClick', type: 'func',
+  {name: 'onClick', type: 'func',
     description: <span>Handler for when the button is clicked</span>
   },
-  { name: 'size', type: 'oneOf',
+  {name: 'size', type: 'oneOf',
     description: <span>smallest, small, medium (<b>default</b>), large, largest</span>
   },
-  { name: 'style', type: 'oneOf',
+  {name: 'style', type: 'oneOf',
     // eslint-disable-next-line max-len
     description: <span>solid (<b>default</b>), inverted (light over color background), outlined</span>
   },
-  { name: 'theme', type: 'oneOf',
+  {name: 'theme', type: 'oneOf',
     // eslint-disable-next-line max-len
     description: <span>cool, warm, dark (<b>default</b>), mid, light, white</span>
   },
-    { name: 'title', type: 'string',
+    {name: 'title', type: 'string',
     // eslint-disable-next-line max-len
     description: <span>Meaningful text for the title attribute. If none, will <b>default</b> to label string.</span>
   }

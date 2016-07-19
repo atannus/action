@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import * as appTheme from 'universal/styles/theme';
 
 const combineStyles = StyleSheet.combineStyles;
-const { cool, warm, dark, mid, light } = appTheme.palette;
+const {cool, warm, dark, mid, light} = appTheme.palette;
 const white = '#fff';
 
 let styles = {};

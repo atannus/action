@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-look';
+import {StyleSheet} from 'react-look';
 
 if (typeof __WEBPACK__ !== 'undefined' && __WEBPACK__) {
   /* eslint-disable global-require */

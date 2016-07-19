@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 
 let styles = {};
 
@@ -12,7 +12,7 @@ export default class SectionHeader extends Component {
   }
 
   render() {
-    const { heading, description } = this.props;
+    const {heading, description} = this.props;
 
     return (
       <header className={styles.base}>

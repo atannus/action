@@ -120,12 +120,14 @@ export default class Invitation extends Component {
     }).catch(console.warn.bind(console));
   };
 
-  renderLogin = () => (
-    <div>
-      <LoadingView />
-      <Auth0ShowLock {...this.props} />
-    </div>
-  );
+  renderLogin = () => {
+    return (
+      <div>
+        <LoadingView />
+        <Auth0ShowLock {...this.props} />
+      </div>
+    );
+  };
 
   render() {
     const {authToken} = this.props;
@@ -136,6 +138,6 @@ export default class Invitation extends Component {
     }
 
     // TODO this would be a nice place for a spinner:
-    return (<div/>);
+    return <div/>;
   }
 }

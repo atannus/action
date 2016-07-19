@@ -8,29 +8,29 @@ import Avatar from 'universal/modules/team/components/Avatar/Avatar';
 const avatar = <Avatar badge="present" hasLabel size="largest" />;
 const avatarString = '<Avatar badge="present" hasLabel size="largest" />';
 const avatarPropsList = [
-  { name: 'badge', type: 'oneOf',
+  {name: 'badge', type: 'oneOf',
     description: <span>absent, active, present</span>
   },
-  { name: 'hasLabel', type: 'bool',
+  {name: 'hasLabel', type: 'bool',
     description: <span>Shows a label with the avatar image</span>
   },
-  { name: 'hasTooltip', type: 'bool',
+  {name: 'hasTooltip', type: 'bool',
     description: <span>Shows a tooltip on hover</span>
   },
-  { name: 'image', type: 'string',
+  {name: 'image', type: 'string',
     description: <span>The source of the image. A URL or data-uri.</span>
   },
-  { name: 'labelRight', type: 'bool',
+  {name: 'labelRight', type: 'bool',
     description: <span>Moves label to the right of the avatar image</span>
   },
-  { name: 'name', type: 'string',
+  {name: 'name', type: 'string',
     // eslint-disable-next-line max-len
     description: <span>This is the text for the label and/or tooltip, typically a name or username.</span>
   },
-  { name: 'onClick', type: 'func',
+  {name: 'onClick', type: 'func',
     description: <span>Handles clicking the avatar component</span>
   },
-  { name: 'size', type: 'oneOf',
+  {name: 'size', type: 'oneOf',
     description: <span>smallest, small, medium, large, largest</span>
   }
 ];

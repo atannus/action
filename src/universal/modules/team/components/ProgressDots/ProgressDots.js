@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import tinycolor from 'tinycolor2';
 import theme from 'universal/styles/theme';
 
@@ -25,7 +25,7 @@ export default class ProgressDots extends Component {
   };
 
   renderDot(idx) {
-    let { numCompleted, currentDot } = this.props;
+    let {numCompleted, currentDot} = this.props;
     numCompleted--;
     currentDot--;
     let dotStyle = null;
@@ -51,7 +51,7 @@ export default class ProgressDots extends Component {
   }
 
   render() {
-    const { numDots } = this.props;
+    const {numDots} = this.props;
 
     return (
       <div className={styles.progressDotGroup}>

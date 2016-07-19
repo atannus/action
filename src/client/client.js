@@ -20,7 +20,7 @@ const createCashay = (store, cashaySchema) => {
   });
 };
 
-(async() => {
+(async () => {
   const store = await makeStore(initialState);
   // Create the Cashay singleton:
   let cashaySchema = null;

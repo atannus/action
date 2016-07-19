@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 
 import theme from 'universal/styles/theme';
 
@@ -19,7 +19,7 @@ export default class Sidebar extends Component {
   }
 
   render() {
-    const { shortUrl, teamName, timerValue } = this.props;
+    const {shortUrl, teamName, timerValue} = this.props;
 
     return (
       <div className={styles.sidebar}>

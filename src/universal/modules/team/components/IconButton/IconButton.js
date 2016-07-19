@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import FontAwesome from 'react-fontawesome';
 import theme from 'universal/styles/theme';
 
 const combineStyles = StyleSheet.combineStyles;
-const { cool } = theme.palette;
+const {cool} = theme.palette;
 const baseButtonColor = theme.palette.cool40l;
 
 let styles = {};
@@ -21,7 +21,7 @@ export default class IconButton extends Component {
   }
 
   render() {
-    const { disabled, iconName, iconSize, onClick, title } = this.props;
+    const {disabled, iconName, iconSize, onClick, title} = this.props;
     const disabledStyles = combineStyles(styles.base, styles.disabled);
     const buttonStyles = disabled ? disabledStyles : styles.base;
 

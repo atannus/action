@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import theme from 'universal/styles/theme';
 
 const combineStyles = StyleSheet.combineStyles;
@@ -17,7 +17,7 @@ export default class ProgressDots extends Component {
   };
 
   renderDot(idx) {
-    let { numCompleted, currentDot } = this.props;
+    let {numCompleted, currentDot} = this.props;
     numCompleted--;
     currentDot--;
     let dotStyle = null;

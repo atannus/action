@@ -38,7 +38,7 @@ export const hashInviteTokenKey = async (uriTokenString) => {
   return await hash(key, INVITE_TOKEN_KEY_HASH_ROUNDS);
 };
 
-export const validateInviteTokenKey = async(key, hashStringToCompare) =>
+export const validateInviteTokenKey = async (key, hashStringToCompare) =>
   await compare(key, hashStringToCompare);
 
 export const getInviterInfoAndTeamName = async(teamId, userId) => {
@@ -61,7 +61,7 @@ export const getInviterInfoAndTeamName = async(teamId, userId) => {
 };
 
 // can't use Promise.all because we want to try n+1, even if n was an error. we're not quitters!
-export const resolveSentEmails = async(sendEmailPromises, inviteesWithTokens) => {
+export const resolveSentEmails = async (sendEmailPromises, inviteesWithTokens) => {
   const inviteeErrors = [];
   const inviteesToStore = [];
   for (let i = 0; i < sendEmailPromises.length; i++) {

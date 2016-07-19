@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import FontAwesome from 'react-fontawesome';
 import theme from 'universal/styles/theme';
 
@@ -36,7 +36,7 @@ export default class ShortcutsMenu extends Component {
   }
 
   render() {
-    const { shortcutsList, onCloseClick } = this.props;
+    const {shortcutsList, onCloseClick} = this.props;
 
     return (
       <div className={styles.shortcutsMenu}>

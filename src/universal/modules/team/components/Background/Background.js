@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import * as appTheme from 'universal/styles/theme';
 
 const combineStyles = StyleSheet.combineStyles;
-const { cool, warm, dark, mid, light } = appTheme.palette;
+const {cool, warm, dark, mid, light} = appTheme.palette;
 const white = '#fff';
 const padding = '2rem';
 
@@ -41,7 +41,7 @@ export default class Background extends Component {
   }
 
   render() {
-    const { align, children, theme, width } = this.props;
+    const {align, children, theme, width} = this.props;
 
     const alignCSS = align || 'left';
     const themeCSS = theme || 'dark';

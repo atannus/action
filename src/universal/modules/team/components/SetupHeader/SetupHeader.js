@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import theme from 'universal/styles/theme';
 
 let styles = {};
@@ -13,7 +13,7 @@ export default class SetupHeader extends Component {
   }
 
   render() {
-    const { heading, subHeading } = this.props;
+    const {heading, subHeading} = this.props;
 
     return (
       <div className={styles.setupHeader}>

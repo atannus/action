@@ -6,7 +6,7 @@ module.exports.run = function() {
   // eslint-disable-next-line global-require
   require('babel-register')({
     only(filename) {
-      return (filename.indexOf('build') === -1 && filename.indexOf('node_modules') === -1);
+      return filename.indexOf('build') === -1 && filename.indexOf('node_modules') === -1;
     },
     extensions: ['.js'],
     resolveModuleSource(source, filename) {

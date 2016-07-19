@@ -18,7 +18,7 @@ const dechannelfy = {
 };
 
 export default function scSubscribeHandler(exchange, socket) {
-  return async function subscribeHandler(subbedChannelName = '') {
+  return function subscribeHandler(subbedChannelName = '') {
     const {channel, variableString} = parseChannel(subbedChannelName);
     const subscription = subscriptions.find(sub => sub.channel === channel);
     if (subscription) {

@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import look, { StyleSheet } from 'react-look';
+import React, {Component, PropTypes} from 'react';
+import look, {StyleSheet} from 'react-look';
 import FontAwesome from 'react-fontawesome';
 import tinycolor from 'tinycolor2';
 import theme from 'universal/styles/theme';
@@ -33,7 +33,7 @@ export default class Avatar extends Component {
   };
 
   renderBadge() {
-    const { badge, size } = this.props;
+    const {badge, size} = this.props;
     let badgeStyles = styles.badge;
     let icon;
     let iconStyles;
