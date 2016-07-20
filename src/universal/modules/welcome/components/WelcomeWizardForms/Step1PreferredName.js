@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {reduxForm} from 'redux-form';
 import Field from 'universal/components/Field/Field';
+import Type from 'universal/components/Type/Type';
 import ProgressDots from '../ProgressDots/ProgressDots';
 import WelcomeContent from '../WelcomeContent/WelcomeContent';
 import WelcomeHeader from '../WelcomeHeader/WelcomeHeader';
@@ -45,6 +46,9 @@ const Step1PreferredName = (props) => {
           onClick={progressDotClick}
         />
         <div>{/* Div for that flexy flex */}
+          <Type align="center" style="italic" scale="s6">
+            (Testing Type component FOUC, do I flash?)
+          </Type>
           <WelcomeHeading copy={<span>Please type in your name:</span>} />
           <form onSubmit={handleSubmit(onPreferredNameSubmit)}>
             <Field

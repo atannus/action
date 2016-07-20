@@ -2,48 +2,47 @@ import React, {PropTypes} from 'react';
 import look, {StyleSheet} from 'react-look';
 import * as t from 'universal/styles/theme';
 
-const combineStyles = StyleSheet.combineStyles;
-const {cool, warm, dark, mid, light} = t.palette;
-const white = '#fff';
-
-let s = {};
+const colors = {
+  cool: t.palette.cool,
+  warm: t.palette.warm,
+  dark: t.palette.dark,
+  mid: t.palette.mid,
+  light: t.palette.light,
+  white: '#fff'
+};
 
 const Type = (props) => {
   const {
     align,
-    bold,
     children,
     display,
     family,
-    italic,
     marginBottom,
     marginTop,
     scale,
+    style,
     theme,
+    weight,
     width
   } = props;
 
-  const typeStyles = combineStyles(
-    s[align],
-    s[bold],
-    s[display],
-    s[family],
-    s[scale],
-    s[theme],
-    s[italic],
-    s[width]
-  );
-
-  const marginStyle = {
-    marginBottom,
-    marginTop
-  };
-
-  const boldStyles = bold ? s.bold : null;
-  const italicStyles = italic ? s.italic : null;
+  const s = StyleSheet.create({
+    root: {
+      color: colors[theme],
+      display,
+      fontFamily: t.typography[family],
+      fontSize: t.typography[scale],
+      fontStyle: style,
+      fontWeight: weight,
+      textAlign: align,
+      marginBottom,
+      marginTop,
+      width
+    }
+  });
 
   return (
-    <div className={combineStyles(typeStyles, boldStyles, italicStyles)} style={marginStyle}>
+    <div className={s.root}>
       {children}
     </div>
   );
@@ -55,18 +54,16 @@ Type.propTypes = {
     'center',
     'right'
   ]),
-  bold: PropTypes.bool,
   children: PropTypes.any,
   display: PropTypes.oneOf([
     'block',
     'inline',
-    'inlineBlock'
+    'inline-block'
   ]),
   family: PropTypes.oneOf([
     'sansSerif',
     'serif'
   ]),
-  italic: PropTypes.bool,
   marginBottom: PropTypes.string,
   marginTop: PropTypes.string,
   scale: PropTypes.oneOf([
@@ -80,6 +77,10 @@ Type.propTypes = {
     's7',    // 36px
     's8',    // 48px
   ]),
+  style: PropTypes.oneOf([
+    'normal',
+    'italic',
+  ]),
   theme: PropTypes.oneOf([
     'cool',
     'warm',
@@ -88,9 +89,13 @@ Type.propTypes = {
     'light',
     'white'
   ]),
+  weight: PropTypes.oneOf([
+    '400', // normal
+    '700'  // bold
+  ]),
   width: PropTypes.oneOf([
     'auto',
-    'full'
+    '100%'
   ])
 };
 
@@ -103,125 +108,8 @@ Type.defaultProps = {
   scale: 'sBase',
   style: 'normal',
   theme: 'dark',
-  width: 'full'
+  weight: '400',
+  width: '100%'
 };
-
-s = StyleSheet.create({
-  // align
-  left: {
-    textAlign: 'left'
-  },
-
-  center: {
-    textAlign: 'center'
-  },
-
-  right: {
-    textAlign: 'right'
-  },
-
-  // display
-  block: {
-    display: 'block'
-  },
-
-  inline: {
-    display: 'inline'
-  },
-
-  inlineBlock: {
-    display: 'inline-block'
-  },
-
-  // family
-  sansSerif: {
-    fontFamily: t.typography.sansSerif
-  },
-
-  serif: {
-    fontFamily: t.typography.serif
-  },
-
-  // scale
-  sBase: {
-    fontSize: t.typography.sBase
-  },
-
-  s1: {
-    fontSize: t.typography.s1
-  },
-
-  s2: {
-    fontSize: t.typography.s2
-  },
-
-  s3: {
-    fontSize: t.typography.s3
-  },
-
-  s4: {
-    fontSize: t.typography.s4
-  },
-
-  s5: {
-    fontSize: t.typography.s5
-  },
-
-  s6: {
-    fontSize: t.typography.s6
-  },
-
-  s7: {
-    fontSize: t.typography.s7
-  },
-
-  s8: {
-    fontSize: t.typography.s8
-  },
-
-  // style
-  italic: {
-    fontStyle: 'italic'
-  },
-
-  // theme
-  cool: {
-    color: cool
-  },
-
-  warm: {
-    color: warm
-  },
-
-  dark: {
-    color: dark
-  },
-
-  mid: {
-    color: mid
-  },
-
-  light: {
-    color: light
-  },
-
-  white: {
-    color: white
-  },
-
-  // weight
-  bold: {
-    fontWeight: 700
-  },
-
-  // width
-  auto: {
-    width: 'auto'
-  },
-
-  full: {
-    width: '100%'
-  }
-});
 
 export default look(Type);

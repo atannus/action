@@ -105,7 +105,7 @@ const Step3InviteTeam = (props) => {
           onClick={progressDotClick}
         />
         <div>{/* Div for that flexy flex */}
-          <Type align="center" italic scale="s6">
+          <Type align="center" style="italic" scale="s6">
             Sounds like a great team!
           </Type>
           <WelcomeHeading copy={<span>Let’s invite some folks to the <b>{teamName}</b> team.</span>}/>

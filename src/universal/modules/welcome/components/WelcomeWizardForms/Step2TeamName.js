@@ -58,7 +58,7 @@ const Step2TeamName = (props) => {
           onClick={progressDotClick}
         />
         <div>{/* Div for that flexy flex */}
-          <Type align="center" italic scale="s6">
+          <Type align="center" style="italic" scale="s6">
             Nice to meet you, {preferredName}!
           </Type>
           <WelcomeHeading copy={<span>Please type in your team name:</span>} />
