@@ -59,7 +59,7 @@ const Step2TeamName = (props) => {
         />
         <div>{/* Div for that flexy flex */}
           <Type align="center" style="italic" scale="s6">
-            Nice to meet you, {preferredName}!
+            <span>Nice to meet you, {preferredName}!</span>
           </Type>
           <WelcomeHeading copy={<span>Please type in your team name:</span>} />
           <form onSubmit={handleSubmit(onTeamNameSubmit)}>
