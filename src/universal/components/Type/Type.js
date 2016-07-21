@@ -76,6 +76,7 @@ export default class Type extends Component {
     marginBottom: '0px',
     marginTop: '0px',
     scale: 'sBase',
+    shouldUpdate: false,
     style: 'normal',
     theme: 'dark',
     weight: '400',
