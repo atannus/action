@@ -5,6 +5,7 @@ import subscriber from 'universal/subscriptions/subscriber';
 import socketWithPresence from 'universal/decorators/socketWithPresence/socketWithPresence';
 
 import MeetingLayout from 'universal/modules/meeting/components/MeetingLayout/MeetingLayout';
+import MeetingCheckinLayout from 'universal/modules/meeting/components/MeetingCheckinLayout/MeetingCheckinLayout';
 import MeetingLobbyLayout from 'universal/modules/meeting/components/MeetingLobbyLayout/MeetingLobbyLayout';
 import Sidebar from 'universal/modules/team/components/Sidebar/Sidebar';
 
@@ -75,57 +76,47 @@ export default class MeetingContainer extends Component {
     this.setMembersState(teamMembers, presence);
   }
 
+  onStartMeetingClick = () => {
+    this.setState({ phase: 'checkin' });
+  }
+
   setMembersState(teamMembers, presence) {
     const {members: stateMembers} = this.state;
-    let members = [];
+    const members = [];
 
-    // Detect new members:
     teamMembers.forEach((teamMember) => {
       const {cachedUser: {id: userId}} = teamMember;
       const existingMember = stateMembers.find(m => m.id === userId);
+      const onlinePresence = presence.find(con => con.userId === userId) ?
+        'online' : 'offline';
       if (!existingMember) {
+        // Create new member:
         members.push({
           id: teamMember.cachedUser.id,
-          connection: 'offline',
+          connection: onlinePresence,
           hasBadge: false,
           image: teamMember.cachedUser.picture,
+          name: teamMember.cachedUser.profile.preferredName,
           size: 'small'
+        });
+      } else {
+        // Update online status of existing members:
+        members.push({
+          ...existingMember,
+          connection: onlinePresence
         });
       }
     });
 
-    // Update connection status:
-    members = stateMembers.concat(members);
-    members.forEach((member, idx) => {
-      const onlinePresence = presence.find(con => con.userId === member.id);
-      members[idx].connection = onlinePresence ? 'online' : 'offline';
-    });
     this.setState({ members });
   }
 
   render() {
-//    const {meeting} = this.props.meetingSub.data;
-//    const {presence} = this.props.presenceSub.data;
-//    const socketsPresent = presence.map(con => con.id).join(', ');
-//    const usersPresent = presence.map(con => con.userId).join(', ');
     const {members, phase} = this.state;
     const {team} = this.props;
+    const {teamId} = this.props.params;
 
-    const shortUrl = `https://prbl.io/m/${this.props.params.teamId}`;
-
-
-        // <div className={styles.viewport}>
-        //   <div className={styles.main}>
-        //     <div className={styles.contentGroup}>
-        //       <div>HI GUY</div>
-        //       <div>Your meeting id is: {meeting.id}</div>
-        //       <div>Your userId is: {this.props.user.id}</div>
-        //       <div>Folks present: {usersPresent}</div>
-        //       <div>Sockets present: {socketsPresent}</div>
-        //       {/* <SetupField /> */}
-        //     </div>
-        //   </div>
-        // </div>
+    const shortUrl = `https://prbl.io/m/${teamId}`;
 
     return (
       <MeetingLayout>
@@ -138,6 +129,15 @@ export default class MeetingContainer extends Component {
         />
         {phase === 'lobby' &&
           <MeetingLobbyLayout
+            members={members}
+            onStartMeetingClick={this.onStartMeetingClick}
+            shortUrl={shortUrl}
+            teamName={team.name}
+            timerValue="30:00"
+          />
+        }
+        {phase === 'checkin' &&
+          <MeetingCheckinLayout
             members={members}
             shortUrl={shortUrl}
             teamName={team.name}
